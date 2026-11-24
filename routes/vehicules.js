@@ -20,11 +20,11 @@ router.get("/", (req, res) => {
 
 // GET /vehicules/:id
 router.get("/:id", (req,res) => {
-    const vehicules = vehicules.find(v => v.id === req.params.id);
-    if (!vehicules) { 
-    res.status(404).json({ message: "Vehicule introuvable"});
+        const vehicule = vehicules.find(v => v.id == req.params.id);
+    if (!vehicule) {
+        res.status(404).json({ erreur: "Vehicule introuvable" });
     } else {
-    res.status(200).json(vehicules);
+        res.status(200).json(vehicule);
     }
 });
 
@@ -44,7 +44,7 @@ router.post("/", (req, res) => {
         vehicules.push(nouveau);
         res.status(201).json(nouveau);
     }else {
-        res.status(400).json({ message: "Champs obligatoires manquants"})
+        res.status(400).json({ erreur: "Champs obligatoires manquants"})
     }
 });
 
