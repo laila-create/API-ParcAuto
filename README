@@ -1,0 +1,33 @@
+# Vehicles API
+
+A simple Express API to manage the vehicles of a car rental agency.
+Data is stored in memory, so it resets every time the server restarts.
+
+## How to run
+
+1. Install the packages:
+   npm install
+   ```
+2. Create a `.env` file with:
+   PORT=3000
+   ```
+3. Start the server:
+   npm run dev
+   ```
+
+The server runs on http://localhost:3000
+
+## Routes
+
+| Method | URL | What it does |
+                ---
+| GET | /vehicules | List all vehicles 
+| GET | /vehicules/:id | Get one vehicle 
+| POST | /vehicules | Create a vehicle (`marque`, `modele`, `immatriculation` required) 
+| PATCH | /vehicules/:id | Update one or more
+| DELETE | /vehicules/:id | Delete a vehicle 
+
+## Project files
+
+- `server.js` - starts the server
+- `routes/vehicules.js` - the vehicle routes
